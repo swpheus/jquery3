@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="common/jquery-3.2.1.min.js">
+    </script>
+    <style media="screen">
+      .box{width: 500px; height:200px; background: #eee; font:14/28px 돋움; overflow: hidden; overflow-x:hidden;overflow-y: scroll;}
+      #wrapper{position: relative;}
+     img{width: 600px;}
+     button{position: absolute; left: 410px; top:  190px; background: rgba(0,0,0,0.7); padding: 15px; color: #fff; display: none;}
+     .show{border: 1px solid blue; padding: 30px; color: blue; line-height: 30px}
+    </style>
+    <script>
+      $(function(){
+        var scrollL,scrollT;
+        $('.box').scroll(function() {
+            scrollL=$(this).scrollLeft();
+            scrollT=$(this).scrollTop();
+            console.log(scrollL,scrollT);
+            if(scrollT%50==0) $('.show').append("<p>scrollLeft : "+scrollL+"px scrollTop :"+scrollT+"px</p>")
+            if(scrollT==0) $(".box button").css('display', 'none')
+            else $("button").css('display', 'block');
+        });
+        $(".box button").click(function(event) {
+          /* Act on the event */
+          $(".box").scrollTop(0);//쓰기기능
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h2>scroll</h2>
+    <div class="box">
+      <p>(서울=연합뉴스) 백나리 기자 = 남북 고위급회담이 열리는 9일 북측 대표단이 오전 9시 30분께 군사분계선(MDL)을 통과해 도보로 회담 장소인 판문점 남측지역 '평화의집'으로 이동한다고 통일부가 8일 밝혔다.
+       통일부는 이날 북측에서 남측으로 판문점 연락채널을 통해 수행원과 지원인력 명단 등을 통보함으로써 회담 준비를 위한 실무작업이 마무리됐다면서 이같이 전했다.
+       이어 판문점 연락채널을 통한 남북의 업무마감 통화는 이날 오후 4시반께 이뤄졌다고 덧붙였다.
+            조명균 통일부 장관을 수석대표로 한 우리측 대표단과 리선권 조국평화통일위원회 위원장을 단장으로 한 북측 대표단은 9일 오전 10시 평화의집에서 고위급 당국회담을 갖는다. 양측은 북한의 평창동계올림픽 참가와 남북관계 개선 문제를 논의할 예정이다.
+         (서울=연합뉴스) 백나리 기자 = 남북 고위급회담이 열리는 9일 북측 대표단이 오전 9시 30분께 군사분계선(MDL)을 통과해 도보로 회담 장소인 판문점 남측지역 '평화의집'으로 이동한다고 통일부가 8일 밝혔다.
+        통일부는 이날 북측에서 남측으로 판문점 연락채널을 통해 수행원과 지원인력 명단 등을 통보함으로써 회담 준비를 위한 실무작업이 마무리됐다면서 이같이 전했다.
+        이어 판문점 연락채널을 통한 남북의 업무마감 통화는 이날 오후 4시반께 이뤄졌다고 덧붙였다.
+        조명균 통일부 장관을 수석대표로 한 우리측 대표단과 리선권 조국평화통일위원회 위원장을 단장으로 한 북측 대표단은 9일 오전 10시 평화의집에서 고위급 당국회담을 갖는다. 양측은 북한의 평창동계올림픽 참가와 남북관계 개선 문제를 논의할 예정이다.
+     <p>
+       <img src="images/kid_01.jpg" alt="조인성" />
+    <button type="button">맨위로</button>
+    </div>
+    <div class="show">
+    </div>
+  </div>
+  </body>
+</html>

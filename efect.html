@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>efect.html</title>
+    <script src="common/jquery-3.2.1.min.js">
+    </script>
+    <script>
+    $(function(){
+      //h3태그를 추가하면서 해당 이미지의 alt 값을 넣어주세요!!
+      var alt,btn;
+        $('#wrapper>div').each(function(i) {
+            alt=$(this).find('img').attr('alt');
+            $(this).prepend("<h3>"+alt+"</h3>")
+        });
+        $('button').click(function(event) {
+          /* Act on the event */
+          btn=$(this).text();
+          var $img=$(this).parent().prev();
+          if(btn=="HIDE")$img.hide(100);
+          else if(btn=="show") $img.show(10000);
+          else $img.toggle(600);
+        });
+    });
+
+    </script>
+    <style >
+      #wrapper>div{padding:0 20px 20px; width: 180px; height: 280px;border: 1px solid #ddd; text-align: center; position: relative;}
+      h3{background: #0033cc; color:#fff;padding: 5px;}
+      #wrapper div div{position: absolute; left: 20px; bottom: 20px; width: 180px;}
+      .img1>button{position: absolute;}
+
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h2>jquery effects</h2>
+      <div class="img1">
+          <h3></h3>
+        <img src="images/kid_01.jpg" alt="대한" />
+        <div>
+          <button type="button"> SHOW</button>
+          <button type="button"> HIDE</button>
+          <button type="button"> Toggle</button>
+        </div>
+      </div>
+      <div class="img2">
+        <h3></h3>
+        <img src="images/kid_02.jpg" alt="민국" />
+        <div>
+          <button type="button"> SHOW</button>
+          <button type="button"> HIDE</button>
+          <button type="button"> Toggle</button>
+        </div>
+      </div>
+      <div class="img3">
+        <h3></h3>
+        <img src="images/kid_03.jpg" alt="민국" />
+        <div>
+          <button type="button"> SHOW</button>
+          <button type="button"> HIDE</button>
+          <button type="button"> Toggle</button>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
