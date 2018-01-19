@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>banner.html</title>
+    <script src="common/jquery-3.2.1.min.js"></script>
+    <script src="common/jquery-ui.js"></script>
+    <script>
+      $(function(){
+        $('.naver').click(function(e) {
+          /* Act on the event */
+          console.log($(this).attr('href'));
+          e.preventDefault();//해당이벤트 막기
+        });
+        $('.daum').click(function(e) {
+          /* Act on the event */
+          console.log($(this).attr('href'));
+          return false; //해당이벤트 막기
+        });
+        $('.google').on('click',function(event) {
+          console.log($(this).text());
+          event.preventDefault();
+          /* Act on the event */
+        });
+        $('.nate').one('click',function(event) {
+          console.log($(this).text());
+          return false;
+          /* Act on the event */
+        });
+        $('.KaKao').on({
+              click: function(){
+                $(this).attr('class', 'orange');
+            },
+              mouseenter:function(){
+                $(this).attr('class', 'blue');
+            },
+              mouseleave:function(){
+                $(this).attr('class', '');
+            }
+        });
+        $('h3').on('click',function(){
+          sum($(this).text());
+          function sum(num){
+            num++;
+            $('h3').text(num);
+            //h3 숫자 증감 실행
+          }
+
+        });
+        $('.btn').on('click',function(){
+          $('h3').trigger('click'); //h3 클릭이벤트를 강제로 실행함
+        });
+
+      });
+    </script>
+    <style>
+    li{list-style: none; width: 200px; padding: 10px;}
+    a:link,a:visited,a:hover,a:active{text-decoration: none; color: #000;}
+    a{display: block; padding: 20px; text-align: center; border: 1px solid #aaa;}
+    .orange{background: orange; color: #fff; border: 1px solid orange}
+    .blue{background: blue; color: #fff; border: 1px solid blue}
+    .green{background: green; color: #fff; border: 1px solid green}
+    h3{width: 100px; line-height: 100px; text-align: center; color: #fff; background: #ff3366;}
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <ul>
+        <li><a href="http://www.naver.com" class="naver">naver</a></li>
+        <li><a href="http://www.daum.com" class="daum">daum</a></li>
+        <li><a href="http://www.google.com" class="google">google</a></li>
+        <li><a href="#" class="nate">nate</a></li>
+        <li><a href="#" class="KaKao">kakao</a></li>
+      </ul>>
+      <h3>0</h3>
+      <button type="button"  class="btn">누르세요!</button>
+    </div>
+
+  </body>
+</html>

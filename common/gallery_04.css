@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: 'NanumGothic';
+  src: url('font/NanumGothic.eot');
+  src: url('font/NanumGothic.eot?#iefix') format('embedded-opentype'),
+       url('font/NanumGothic.woff') format('woff'),
+       url('font/NanumGothic.ttf') format('truetype'),
+       url('font/NanumGothic.svg#NanumGothic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Reset */
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select,blockquote,strong,xmp{margin:0; padding:0; font-size:14px; line-height:20px; font-weight:normal; font-family: 'NanumGothic', arial, '돋움', Helvetica, verdana, futura, tahoma, sans-serif; color:#555;}
+legend,caption{display:none;}
+img,fieldset{border:0;}
+ul,ol{list-style:none;}
+a:link,a:visited,a:hover,a:active{text-decoration:none;color:#999;}
+a{display:block}
+
+#wrapper{text-align:center}
+#wrapper h2{background:#a0c6eb; color:#fff; text-align:center; padding:20px; font:bold 20px NanumGothic; margin-bottom:50px}
+#wrapper button{margin:50px 5px; border:none; background:#464646; color:#fff; padding:8px 20px}
+#wrapper button.prev{background:#a6a6a6}
+
+.banner{width:1200px; margin:auto;}
+.banner ul{overflow:hidden;}
+.banner ul li{float:left; width:200px;}
+.banner ul li img{width:100%}
+.banner ul li a{font-size:0; line-height:0; position:relative}
+.banner b{background:#fff; color:#4e4e4e; width:20px; font:12px/20px NanumGothic; position:absolute; left:0; top:0;}

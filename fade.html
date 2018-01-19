@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>fade.html</title>
+    <script src="common/jquery-3.2.1.js">
+    </script>
+    <script>
+      $(function(){
+        $('button').click(function() {
+          /* Act on the event */
+          var text=$(this).attr('class');
+          var $img=$(this).parent().prev();
+          console.log($('input').val());
+          switch(text){
+            case 'in' : $img.fadeIn(1000); break;
+            case 'out' : $img.fadeOut(100); break;
+            case 'toggle' : $img.fadeToggle(600); break;
+            default : $img.fadeTo(500,$('input').val());
+          }
+        });
+
+      });
+
+    </script>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h2>fade</h2>
+      <img src="images/kid_01.jpg" alt="조인성" />
+      <div>
+        <button type="button" class="in"> fadeIn</button>
+        <button type="button" class="out"> fadeOut</button>
+        <button type="button" class="toggle"> Toggle</button><br />
+        <input type="text" name="fade" />
+        <button type="button" class="fadeTo">Toggle</button>
+      </div>
+    </div>
+
+  </body>
+</html>
